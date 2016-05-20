@@ -16,10 +16,11 @@ getAllTicketMetrics <- function(){
   
   ## Transform the JSON data to a data.frame
   json.data <- lapply(unlist(result), fromJSON)
-  pre.result <- lapply(json.data, function(x) do.call("rbind", x$ticket_metrics))
-  final.result<-do.call("rbind", pre.result)
-  ticket_metrics.df <- data.frame(final.result)
-  ticket_metrics.df <- unlistDataFrame(ticket_metrics.df)
-  return(ticket_metrics.df)
+  return(json.data)
+  #pre.result <- lapply(json.data, function(x) do.call("rbind", x$ticket_metrics))
+  #final.result<-do.call("rbind", pre.result)
+  #ticket_metrics.df <- data.frame(final.result)
+  #ticket_metrics.df <- unlistDataFrame(ticket_metrics.df)
+  #return(ticket_metrics.df)
 }        
 
